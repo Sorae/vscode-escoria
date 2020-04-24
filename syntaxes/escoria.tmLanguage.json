@@ -1,0 +1,79 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "Escoria",
+	"patterns": [
+		{
+			"include": "#keywords"
+		},
+		{
+			"include": "#strings"
+		},
+		{
+			"include": "#events"
+		},
+		{
+			"include": "#condition"
+		},
+		{
+			"include": "#dialog"
+		}
+	],
+	"repository": {
+		"keywords": {
+			"patterns": [{
+				"name": "keyword.control.escoria",
+				"match": "\\b(say|set_global|stop|set_state)\\b"
+			}]
+		},
+		"strings": {
+			"name": "string.quoted.double.escoria",
+			"begin": "\"",
+			"end": "\"",
+			"patterns": [
+				{
+					"name": "constant.character.escape.escoria",
+					"match": "\\\\."
+				}
+			]
+		},
+		"events": {
+			"name": "action.control.escoria",
+			"begin": ":",
+			"end": "$",
+			"patterns": [
+				{
+					"name": "constant.character.escape.escoria",
+					"match": "[A-Za-z]"
+				}
+			]
+		},
+		"condition": {
+			"name": "keyword.control.escoria",
+			"begin": "\\[",
+			"end": "\\]",
+			"patterns": [
+				{
+					"name": "constant.character.escape.escoria",
+					"match": "control"
+				},
+				{
+					"name": "variable",
+					"match": "[A-Za-z]"
+				}
+			]
+		},
+		"dialog": {
+			"name": "keyword.control.escoria",
+			"begin": "\\?",
+			"end": "$",
+			"patterns": [
+				{
+					"name": "variable",
+					"match": "[A-Za-z]"
+				}
+			]
+		}
+	},
+	
+	"scopeName": "source.escoria"
+}

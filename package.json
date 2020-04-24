@@ -1,0 +1,27 @@
+{
+    "name": "vscode-escoria",
+    "displayName": "Escoria",
+    "description": "Syntax highligh in VSCode for the Escoria language",
+    "version": "0.0.1",
+    "engines": {
+        "vscode": "^1.44.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "contributes": {
+        "languages": [{
+            "id": "escoria",
+            "aliases": ["Escoria", "escoria", "godot"],
+            "extensions": [".esc"],
+            "configuration": "./language-configuration.json"
+        }],
+        "grammars": [{
+            "language": "escoria",
+            "scopeName": "source.escoria",
+            "path": "./syntaxes/escoria.tmLanguage.json"
+        }]
+	 },
+	 "publisher": "sorae",
+	 "repository": "https://github.com/Sorae/vscode-escoria"
+}
