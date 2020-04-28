@@ -3,10 +3,28 @@
 	"name": "Escoria",
 	"patterns": [
 		{
+			"include": "#state_commands"
+		},
+		{
+			"include": "#item_commands"
+		},
+		{
+			"include": "#other_commands"
+		},
+		{
 			"include": "#keywords"
 		},
 		{
+			"include": "#comments"
+		},
+		{
 			"include": "#strings"
+		},
+		{
+			"include": "#boolean"
+		},
+		{
+			"include": "#numeric"
 		},
 		{
 			"include": "#events"
@@ -19,11 +37,34 @@
 		}
 	],
 	"repository": {
+		"state_commands": {
+			"patterns": [{
+				"name": "keyword.control.escoria",
+				"match": "\\b(set_global|set_globals|set_state|set_active)\\b"
+			}]
+		},
+		"item_commands": {
+			"patterns": [{
+				"name": "keyword.control.escoria",
+				"match": "\\b(say|anim|cut_scene|teleport|walk|walk_block)\\b"
+			}]
+		},
+		"other_commands": {
+			"patterns": [{
+				"name": "keyword.control.escoria",
+				"match": "\\b(debug|wait|change_scene|spawn|stop|restart|sched_event|camera_set_pos|camera_set_target|game_over)\\b"
+			}]
+		},
 		"keywords": {
 			"patterns": [{
 				"name": "keyword.control.escoria",
-				"match": "\\b(say|set_global|stop|set_state)\\b"
+				"match": "\\b(bg_music)\\b"
 			}]
+		},
+		"comments": {
+			"name": "comment.line.dnumber-sign.escoria",
+			"begin": "#",
+			"end": "$"
 		},
 		"strings": {
 			"name": "string.quoted.double.escoria",
@@ -35,6 +76,16 @@
 					"match": "\\\\."
 				}
 			]
+		},
+		"boolean": {
+			"patterns": [{
+				"name": "constant.language.escoria",
+				"match": "\\b(true|false)\\b"
+			}]
+		},
+		"numeric": {
+			"name": "constant.numeric.escoria",
+			"match": "[+-]?(\\d*\\.)?\\d"
 		},
 		"events": {
 			"name": "action.control.escoria",
@@ -52,10 +103,6 @@
 			"begin": "\\[",
 			"end": "\\]",
 			"patterns": [
-				{
-					"name": "constant.character.escape.escoria",
-					"match": "control"
-				},
 				{
 					"name": "variable",
 					"match": "[A-Za-z]"
