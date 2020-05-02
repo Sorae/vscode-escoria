@@ -1,119 +1,134 @@
 {
-	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
-	"name": "Escoria",
-	"patterns": [
-		{
-			"include": "#state_commands"
-		},
-		{
-			"include": "#item_commands"
-		},
-		{
-			"include": "#other_commands"
-		},
-		{
-			"include": "#keywords"
-		},
-		{
-			"include": "#comments"
-		},
-		{
-			"include": "#strings"
-		},
-		{
-			"include": "#boolean"
-		},
-		{
-			"include": "#numeric"
-		},
-		{
-			"include": "#events"
-		},
-		{
-			"include": "#condition"
-		},
-		{
-			"include": "#dialog"
-		}
-	],
-	"repository": {
-		"state_commands": {
-			"patterns": [{
-				"name": "keyword.control.escoria",
-				"match": "\\b(set_global|set_globals|set_state|set_active)\\b"
-			}]
-		},
-		"item_commands": {
-			"patterns": [{
-				"name": "keyword.control.escoria",
-				"match": "\\b(say|anim|cut_scene|teleport|teleport_pos|walk|walk_block|inventory_add|inventory_remove_and_collide|inventory_open)\\b"
-			}]
-		},
-		"other_commands": {
-			"patterns": [{
-				"name": "keyword.control.escoria",
-				"match": "\\b(debug|wait|change_scene|spawn|stop|restart|sched_event|camera_set_position|camera_set_target|game_over|repeat|queue_resource|queue_animation|queue_scene|jump|autosave)\\b"
-			}]
-		},
-		"keywords": {
-			"patterns": [{
-				"name": "keyword.control.escoria",
-				"match": "\\b(bg_music)\\b"
-			}]
-		},
-		"comments": {
-			"name": "comment.line.dnumber-sign.escoria",
-			"begin": "#",
-			"end": "$"
-		},
-		"strings": {
-			"name": "string.quoted.double.escoria",
-			"begin": "\"",
-			"end": "\"",
-			"patterns": [{
-					"name": "constant.character.escape.escoria",
-					"match": "\\\\."
-				}]
-		},
-		"boolean": {
-			"patterns": [{
-				"name": "constant.language.escoria",
-				"match": "\\b(true|false)\\b"
-			}]
-		},
-		"numeric": {
-			"name": "constant.numeric.escoria",
-			"match": "\\b[+-]?(\\d*\\.)?\\d\\b"
-		},
-		"events": {
-			"name": "constant.character.escape.escoria",
-			"begin": "^:",
-			"end":"\\w+"
-		},
-		"condition": {
-			"name": "keyword.control.escoria",
-			"begin": "\\[",
-			"end": "\\]",
-			"patterns": [{
-					"name": "variable",
-					"match": "[A-Za-z]"
-			}]
-		},
-		"dialog": {
-			"patterns": [{
-					"name": "keyword.control.dialog.escoria",
-					"match": "(^(\\s+)?\\?)"
-			},
-			{
-				"name": "keyword.control.group.escoria",
-				"match": "(^(\\s+)?\\>)"
-			},
-			{
-				"name": "keyword.control.branch.escoria",
-				"match": "(^(\\s+)?\\-)"
-			}	]
-		}
-	},
-	
-	"scopeName": "source.escoria"
+    "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+    "name": "Escoria",
+    "patterns": [
+        {
+            "include": "#state_commands"
+        },
+        {
+            "include": "#item_commands"
+        },
+        {
+            "include": "#other_commands"
+        },
+        {
+            "include": "#keywords"
+        },
+        {
+            "include": "#comments"
+        },
+        {
+            "include": "#strings"
+        },
+        {
+            "include": "#boolean"
+        },
+        {
+            "include": "#numeric"
+        },
+        {
+            "include": "#events"
+        },
+        {
+            "include": "#condition"
+        },
+        {
+            "include": "#dialog"
+        }
+    ],
+    "repository": {
+        "state_commands": {
+            "patterns": [
+                {
+                    "name": "keyword.control.escoria",
+                    "match": "\\b(set_global|set_globals|set_state|set_active)\\b"
+                }
+            ]
+        },
+        "item_commands": {
+            "patterns": [
+                {
+                    "name": "keyword.control.escoria",
+                    "match": "\\b(say|anim|cut_scene|teleport|teleport_pos|walk|walk_block|inventory_add|inventory_remove_and_collide|inventory_open)\\b"
+                }
+            ]
+        },
+        "other_commands": {
+            "patterns": [
+                {
+                    "name": "keyword.control.escoria",
+                    "match": "\\b(debug|wait|change_scene|spawn|stop|restart|sched_event|camera_set_pos|camera_set_position|camera_set_target|game_over|repeat|queue_resource|queue_animation|queue_scene|jump|autosave)\\b"
+                }
+            ]
+        },
+        "keywords": {
+            "patterns": [
+                {
+                    "name": "keyword.control.escoria",
+                    "match": "\\b(bg_music)\\b"
+                }
+            ]
+        },
+        "comments": {
+            "name": "comment.line.dnumber-sign.escoria",
+            "begin": "#",
+            "end": "$"
+        },
+        "strings": {
+            "name": "string.quoted.double.escoria",
+            "begin": "\"",
+            "end": "\"",
+            "patterns": [
+                {
+                    "name": "constant.character.escape.escoria",
+                    "match": "\\\\."
+                }
+            ]
+        },
+        "boolean": {
+            "patterns": [
+                {
+                    "name": "constant.language.escoria",
+                    "match": "\\b(true|false)\\b"
+                }
+            ]
+        },
+        "numeric": {
+            "name": "constant.numeric.escoria",
+            "match": "\\b[+-]?(\\d*\\.)?\\d\\b"
+        },
+        "events": {
+            "name": "constant.character.escape.escoria",
+            "begin": "^:",
+            "end": "\\w+"
+        },
+        "condition": {
+            "name": "keyword.control.escoria",
+            "begin": "\\[",
+            "end": "\\]",
+            "patterns": [
+                {
+                    "name": "variable",
+                    "match": "[A-Za-z]"
+                }
+            ]
+        },
+        "dialog": {
+            "patterns": [
+                {
+                    "name": "keyword.control.dialog.escoria",
+                    "match": "(^(\\s+)?\\?)"
+                },
+                {
+                    "name": "keyword.control.group.escoria",
+                    "match": "(^(\\s+)?\\>)"
+                },
+                {
+                    "name": "keyword.control.branch.escoria",
+                    "match": "(^(\\s+)?\\-)"
+                }
+            ]
+        }
+    },
+    "scopeName": "source.escoria"
 }
