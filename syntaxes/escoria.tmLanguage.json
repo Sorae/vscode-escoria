@@ -46,13 +46,13 @@
 		"item_commands": {
 			"patterns": [{
 				"name": "keyword.control.escoria",
-				"match": "\\b(say|anim|cut_scene|teleport|walk|walk_block)\\b"
+				"match": "\\b(say|anim|cut_scene|teleport|teleport_pos|walk|walk_block|inventory_add|inventory_remove_and_collide|inventory_open)\\b"
 			}]
 		},
 		"other_commands": {
 			"patterns": [{
 				"name": "keyword.control.escoria",
-				"match": "\\b(debug|wait|change_scene|spawn|stop|restart|sched_event|camera_set_pos|camera_set_target|game_over)\\b"
+				"match": "\\b(debug|wait|change_scene|spawn|stop|restart|sched_event|camera_set_position|camera_set_target|game_over|repeat|queue_resource|queue_animation|queue_scene|jump|autosave)\\b"
 			}]
 		},
 		"keywords": {
@@ -70,12 +70,10 @@
 			"name": "string.quoted.double.escoria",
 			"begin": "\"",
 			"end": "\"",
-			"patterns": [
-				{
+			"patterns": [{
 					"name": "constant.character.escape.escoria",
 					"match": "\\\\."
-				}
-			]
+				}]
 		},
 		"boolean": {
 			"patterns": [{
@@ -88,37 +86,32 @@
 			"match": "\\b[+-]?(\\d*\\.)?\\d\\b"
 		},
 		"events": {
-			"name": "action.control.escoria",
-			"begin": ":",
-			"end": "$",
-			"patterns": [
-				{
-					"name": "constant.character.escape.escoria",
-					"match": "[A-Za-z]"
-				}
-			]
+			"name": "constant.character.escape.escoria",
+			"begin": "^:",
+			"end":"\\w+"
 		},
 		"condition": {
 			"name": "keyword.control.escoria",
 			"begin": "\\[",
 			"end": "\\]",
-			"patterns": [
-				{
+			"patterns": [{
 					"name": "variable",
 					"match": "[A-Za-z]"
-				}
-			]
+			}]
 		},
 		"dialog": {
-			"name": "keyword.control.escoria",
-			"begin": "\\?",
-			"end": "$",
-			"patterns": [
-				{
-					"name": "variable",
-					"match": "[A-Za-z]"
-				}
-			]
+			"patterns": [{
+					"name": "keyword.control.dialog.escoria",
+					"match": "(^(\\s+)?\\?)"
+			},
+			{
+				"name": "keyword.control.group.escoria",
+				"match": "(^(\\s+)?\\>)"
+			},
+			{
+				"name": "keyword.control.branch.escoria",
+				"match": "(^(\\s+)?\\-)"
+			}	]
 		}
 	},
 	
