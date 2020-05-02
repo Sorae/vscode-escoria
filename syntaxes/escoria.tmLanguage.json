@@ -85,7 +85,7 @@
 		},
 		"numeric": {
 			"name": "constant.numeric.escoria",
-			"match": "[+-]?(\\d*\\.)?\\d"
+			"match": "\\b[+-]?(\\d*\\.)?\\d\\b"
 		},
 		"events": {
 			"name": "action.control.escoria",
