@@ -35,7 +35,4 @@ This repository and the extension that I deploy to the Visual Studio Marketplace
 ### Contacts
 * [Contacts](CONTACTS.md)
 
-### Notes
-* found this
-
 **Happy coding!**
