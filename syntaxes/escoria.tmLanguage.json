@@ -6,6 +6,9 @@
             "include": "#state_commands"
         },
         {
+            "include": "#camera_commands"
+        },
+        {
             "include": "#item_commands"
         },
         {
@@ -41,7 +44,15 @@
             "patterns": [
                 {
                     "name": "keyword.control.escoria",
-                    "match": "\\b(set_global|set_globals|set_state|set_active)\\b"
+                    "match": "\\b(set_global|set_globals|set_state|set_gui_visible|set_active|set_active_if_exists)\\b"
+                }
+            ]
+        },
+        "camera_commands": {
+            "patterns": [
+                {
+                    "name": "keyword.control.escoria",
+                    "match": "\\b(camera_set_pos|camera_set_target|camera_push|camera_push_block|camera_set_limits|camera_set_pos_block|camera_set_target_block|camera_set_zoom|camera_set_zoom_block|camera_set_zoom_height|camera_set_zoom_height_block|camera_shift|camera_shift_block)\\b"
                 }
             ]
         },
@@ -49,7 +60,7 @@
             "patterns": [
                 {
                     "name": "keyword.control.escoria",
-                    "match": "\\b(say|anim|cut_scene|teleport|teleport_pos|walk|walk_block|inventory_add|inventory_remove_and_collide|inventory_open)\\b"
+                    "match": "\\b(say|anim|teleport|teleport_pos|walk|walk_block|inventory_add|inventory_remove|set_interactive|set_angle|turn_to|walk_to_pos|walk_to_pos_block|set_speed|set_animations|slide|slide_block)\\b"
                 }
             ]
         },
@@ -57,15 +68,7 @@
             "patterns": [
                 {
                     "name": "keyword.control.escoria",
-                    "match": "\\b(debug|wait|change_scene|spawn|stop|restart|sched_event|camera_set_pos|camera_set_position|camera_set_target|game_over|repeat|queue_resource|queue_animation|queue_scene|jump|autosave)\\b"
-                }
-            ]
-        },
-        "keywords": {
-            "patterns": [
-                {
-                    "name": "keyword.control.escoria",
-                    "match": "\\b(bg_music)\\b"
+                    "match": "\\b(wait|change_scene|spawn|stop|sched_event|repeat|queue_resource|accept_input|anim_block|custom|dec_global|inc_global|print|play_snd|stop_snd|queue_event|rand_global|show_menu|hide_menu|transition|block_say|end_block_say|enable_terrain)\\b"
                 }
             ]
         },
