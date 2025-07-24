@@ -1,9 +1,9 @@
 {
     "name": "vscode-escoria",
-    "displayName": "Escoria",
-    "description": "Syntax highligh in VSCode for the Escoria language",
+    "displayName": "vscode-escoria",
+    "description": "Syntax highligh in VSCode and VSCodiumfor the Escoria language",
     "icon": "res/icon-128.png",
-    "version": "0.2.0",
+    "version": "0.2.2",
     "engines": {
         "vscode": "^1.41.0"
     },
