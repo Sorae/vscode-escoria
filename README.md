@@ -1,6 +1,8 @@
 # Vscode-Escoria: a syntax hightlight extension
 
-Welcome to the Escoria syntax highlight extension for Vscode!
+Welcome to the Escoria syntax highlight extension for VSCode & VSCodium!
+* [Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=sorae.vscode-escoria)
+* [Open VSX Registry](https://open-vsx.org/extension/sorae/vscode-escoria)
 
 ## Features
 
